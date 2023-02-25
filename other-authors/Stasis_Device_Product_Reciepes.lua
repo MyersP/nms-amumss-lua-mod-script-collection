@@ -1,4 +1,10 @@
-    
+--V 1.1
+-- 1.0 Initial release
+-- 1.1 Hot Ice was fixed to be 1:1 not 50:200 as in 1.0
+--
+--
+--
+------------------------------
 function GetRefinerRecipe(ID, NAME, OUTPUT, COST, TIMETOMAKE)
     return
     [[
@@ -118,7 +124,7 @@ NewProducts = {
         TIMETOMAKE = TwoAndHalfMinutes,
         COSTLIST	= {
             {INPUT='PLANT_SNOW', TYPE='Substance', QUANTITY=100},
-            {INPUT='PLANT_HOT', TYPE='Substance', QUANTITY=200},
+            {INPUT='PLANT_HOT',  TYPE='Substance', QUANTITY=200},
         }
     }, 
     {--Poly Fibre
@@ -153,8 +159,8 @@ NewProducts = {
         OUTPUT 	    = 'COMPOUND3',
         TIMETOMAKE = TwoAndHalfMinutes,
         COSTLIST	= {
-            {INPUT='REACTION2', TYPE='Product', QUANTITY=50},
-            {INPUT='REACTION3', TYPE='Product', QUANTITY=200},
+            {INPUT='REACTION2', TYPE='Product', QUANTITY=1},
+            {INPUT='REACTION3', TYPE='Product', QUANTITY=1},
         }
     },
 }
@@ -204,34 +210,34 @@ NMS_MOD_DEFINITION_CONTAINER =
   }
 }
 
--- Basic map organizing thoughts
+-- ITEM                         HG-ITEMID       HG-ITEMNAME
 --  Stasis Device               = ULTRAPROD2    Name = 'UI_ULTRAPROD_2_NAME'
 --     Quantum Processor        = MEGAPROD2     Name = 'UI_MEGAPROD_2_NAME'
---         Circuit Board        = FARMPROD9     Name = 'UI_FARMPROD_9_NAME' InventoryType = InventoryTypeEnum.Product
---             Heat Capacitor   = FARMPROD4     Name = 'UI_FARMPROD_4_NAME' InventoryType = InventoryTypeEnum.Product
---               Frost Crystal  = PLANT_SNOW                                InventoryType = InventoryTypeEnum.Substance
---               Solanium       = PLANT_HOT                                 InventoryType = InventoryTypeEnum.Substance
---             Poly Fibre       = FARMPROD5     Name = 'UI_FARMPROD_5_NAME' InventoryType = InventoryTypeEnum.Product
---               Cactus Flesh   = PLANT_DUST                                InventoryType = InventoryTypeEnum.Substance
---               Star Bulb      = PLANT_LUSH                                InventoryType = InventoryTypeEnum.Substance
+--         Circuit Board        = FARMPROD9     Name = 'UI_FARMPROD_9_NAME' InventoryType = Product
+--             Heat Capacitor   = FARMPROD4     Name = 'UI_FARMPROD_4_NAME' InventoryType = Product
+--               Frost Crystal  = PLANT_SNOW                                InventoryType = Substance
+--               Solanium       = PLANT_HOT                                 InventoryType = Substance
+--             Poly Fibre       = FARMPROD5     Name = 'UI_FARMPROD_5_NAME' InventoryType = Product
+--               Cactus Flesh   = PLANT_DUST                                InventoryType = Substance
+--               Star Bulb      = PLANT_LUSH                                InventoryType = Substance
 --         Superconductor       = COMPOUND5     Name = 'UI_COMPOUND_5_NAME'        
 --           Enriched Carbon    = REACTION2     Name = 'UI_REACTION_2_NAME'
 --           Semiconductor      = COMPOUND2     Name = 'UI_COMPOUND_2_NAME' 
 --             Thermic Condense = REACTION1     Name = 'UI_REACTION_1_NAME'
---               Nitrogen Salt  = REACTION3     Name = 'UI_REACTION_3_NAME'        
---               Enriched Carbn = REACTION2     Name = 'UI_REACTION_2_NAME'
---     Cryogenic Chamber        = MEGAPROD3     Name = 'UI_MEGAPROD_3_NAME' InventoryType = InventoryTypeEnum.Product
+--               Nitrogen Salt  = REACTION3             
+--               Enriched Carbn = REACTION2     
+--     Cryogenic Chamber        = MEGAPROD3     Name = 'UI_MEGAPROD_3_NAME'
 --       Living Glass           = FARMPROD8     Name = 'UI_FARMPROD_8_NAME'
---         Glass                = FARMPROD3     Name = 'UI_FARMPROD_3_NAME'
+--         Glass                = FARMPROD3     
 --         Lubricant            = FARMPROD2     Name = 'UI_FARMPROD_2_NAME'
---           Faecium            = PLANT_POOP                                InventoryType = InventoryTypeEnum.Substance
---           Gamma Root         = PLANT_RADIO                               InventoryType = InventoryTypeEnum.Substance
+--           Faecium            = PLANT_POOP                                InventoryType = Substance
+--           Gamma Root         = PLANT_RADIO                               InventoryType = Substance
 --       Cryo-Pump              = COMPOUND6     Name = 'UI_COMPOUND_6_NAME'
 --         Thermic Condensate   = REACTION1
---         Hot Ice              = COMPOUND3
+--         Hot Ice              = COMPOUND3     Name = 'UI_COMPOUND_3_NAME'
 --           Nitrogen Salt      = REACTION3
 --           Enriched Carbon    = REACTION2
 --     Iridesite                = ALLOY8        Name = 'UI_ALLOY_COMPLEX_2_NAME'
---         Aronium              = ALLOY1        Name = 'UI_ALLOY_SIMPLE_1_NAME'
---         Magno-Gold           = ALLOY5        Name = 'UI_ALLOY_SIMPLE_5_NAME'
---         Grantine             = ALLOY6        Name = 'UI_ALLOY_SIMPLE_6_NAME'
+--         Aronium              = ALLOY1        
+--         Magno-Gold           = ALLOY5        
+--         Grantine             = ALLOY6        
